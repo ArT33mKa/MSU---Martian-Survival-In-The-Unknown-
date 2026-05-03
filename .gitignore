@@ -1,0 +1,8 @@
+# Godot 4+ specific ignores
+.godot/
+# Якщо використовуєте Godot 3, використовуйте .import/
+
+# Рекомендується також ігнорувати:
+/tmp/
+/logs/
+/android/

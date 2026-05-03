@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://click_indicator_001"]
+
+[ext_resource type="Script" path="res://src/entities/click_indicator.gd" id="1_indicator"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1"]
+transparency = 1
+albedo_color = Color(0.2, 0.8, 1, 0.8)
+emission_enabled = true
+emission = Color(0.2, 0.8, 1, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="TorusMesh" id="TorusMesh_1"]
+inner_radius = 0.22
+outer_radius = 0.28
+rings = 24
+ring_sides = 12
+
+[node name="ClickIndicator" type="Node3D"]
+script = ExtResource("1_indicator")
+lifetime = 1.0
+fade_speed = 2.0
+pulse_speed = 8.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+material_override = SubResource("StandardMaterial3D_1")
+mesh = SubResource("TorusMesh_1")
